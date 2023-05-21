@@ -1,0 +1,23 @@
+name: Great on issue
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - closed
+
+jobs:
+  great_message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Environment
+        run: echo '${{ toJSON(github.event) }}' |jq
+     
+      - name: number
+        run: echo '${{github.event.issue.number}}'
+      - name: Printing Great Message
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+           
+        
