@@ -20,6 +20,10 @@ jobs:
         uses: peter-evans/create-or-update-comment@v3
         with:
            issue-number: ${{github.event.issue.number}}
+           body:  |
+              This is multi-line
+               - With GitHub **Markdown**
+             
       - name: Printing Great Message
         run: |
           if [[ "${{ github.event.action }}" == "opened" ]]; then
